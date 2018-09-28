@@ -16,7 +16,7 @@ public class SimulationGUI {
 	public SimulationGUI() {
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(720, 600);
+		frame.setSize(640, 640);
 		frame.setLocationRelativeTo(null);
 		
 		panel = new JPanel();
