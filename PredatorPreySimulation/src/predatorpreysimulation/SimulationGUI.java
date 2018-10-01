@@ -7,7 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -16,6 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.plaf.metal.MetalLookAndFeel;
+
+
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 
 
@@ -37,13 +41,12 @@ public class SimulationGUI {
 		
 		panel = new JPanel(new GridBagLayout());
 		
-		mainlabel = new JLabel[8][8];
-		
-		for(int i = 0; i <=7; i ++) {
-			for(int k = 0; k <=7; k ++) {
-				
-				mainlabel[i][k].setSize(10, 10);
-				mainlabel[i][k].setIcon(arg0);
+		mainlabel = new JLabel[64][64];
+		for(int i = 0; i <=63; i ++) {
+			for(int k = 0; k <=63; k ++) {
+				mainlabel[i][k] = new JLabel();
+				mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+				mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
 				c.gridy = i;
 				c.gridx = k;
 				
