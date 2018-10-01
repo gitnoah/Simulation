@@ -23,7 +23,6 @@ public class SimulationGUI {
 		
 		
 		
-		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	}
