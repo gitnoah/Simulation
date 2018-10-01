@@ -1,5 +1,6 @@
 package predatorpreysimulation;
 
+
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -12,7 +13,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.plaf.metal.MetalLookAndFeel;
 
 
 
@@ -20,10 +23,9 @@ public class SimulationGUI {
 	JFrame frame;
 	JPanel panel;
 	JLabel[][] mainlabel;
-	//
+	
 	
 	public SimulationGUI() {
-		
 		
 		
 		frame = new JFrame("Simulation");
