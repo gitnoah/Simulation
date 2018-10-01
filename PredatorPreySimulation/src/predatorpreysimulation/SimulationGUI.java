@@ -36,7 +36,7 @@ public class SimulationGUI {
 			for(int k = 0; k <=7; k ++) {
 				
 				mainlabel[i][k].setSize(10, 10);
-				mainlabel[i][k].setIcon(arg0);
+				mainlabel[i][k].setIcon( new ImageIcon("green.jpg"));
 				c.gridy = i;
 				c.gridx = k;
 				
