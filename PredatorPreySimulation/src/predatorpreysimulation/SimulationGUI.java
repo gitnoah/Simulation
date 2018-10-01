@@ -1,5 +1,6 @@
 package predatorpreysimulation;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -33,7 +34,9 @@ public class SimulationGUI {
 		
 		for(int i = 0; i <=7; i ++) {
 			for(int k = 0; k <=7; k ++) {
-				mainlabel[i][k] = new JLabel("[     ]");
+				
+				mainlabel[i][k].setSize(10, 10);
+				mainlabel[i][k].setIcon(arg0);
 				c.gridy = i;
 				c.gridx = k;
 				
