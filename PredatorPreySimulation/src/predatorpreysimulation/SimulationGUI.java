@@ -9,6 +9,8 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+
 
 
 public class SimulationGUI {
@@ -16,6 +18,9 @@ public class SimulationGUI {
 	JPanel panel;
 	
 	public SimulationGUI() {
+		
+		
+		
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(720, 600);
