@@ -42,8 +42,8 @@ public class SimulationGUI {
 				c.gridx = k;
 				
 				panel.add(mainlabel[i][k], c);
-				
 			}
+			
 		}
 		
 		frame.setContentPane(panel);
