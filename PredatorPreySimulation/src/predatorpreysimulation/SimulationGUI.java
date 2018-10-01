@@ -17,6 +17,7 @@ public class SimulationGUI {
 	JFrame frame;
 	JPanel panel;
 	JLabel[][] mainlabel;
+	//
 	
 	public SimulationGUI() {
 		frame = new JFrame("Simulation");
