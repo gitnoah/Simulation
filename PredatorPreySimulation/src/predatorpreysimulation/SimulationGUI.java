@@ -43,7 +43,8 @@ public class SimulationGUI {
 				
 				panel.add(mainlabel[i][k], c);
 			}
-			
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("whitefish.jpg"));
 		}
 		
 		frame.setContentPane(panel);
