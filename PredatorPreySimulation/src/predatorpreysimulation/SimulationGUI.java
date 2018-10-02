@@ -36,7 +36,12 @@ public class SimulationGUI {
 	JPanel panel;
 	JLabel animals;
 	JLabel[][] mainlabel;
+<<<<<<< HEAD
 	BufferedImage fishimg, eagleimg;
+=======
+	int[][] positions;
+	//
+>>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 	
 	public SimulationGUI() {
 		 LoadImage("/img/fish.jpg", "/img/eagle.jpg");
@@ -52,7 +57,10 @@ public class SimulationGUI {
 		
 		panel = new JPanel(new GridBagLayout());
 		
+		//creates grid
+		
 		mainlabel = new JLabel[64][64];
+		
 		for(int i = 0; i <=63; i ++) {
 			for(int k = 0; k <=63; k ++) {
 				mainlabel[i][k] = new JLabel();
@@ -62,11 +70,28 @@ public class SimulationGUI {
 				c.gridx = k;
 				
 				panel.add(mainlabel[i][k], c);
+				
 			}
-			
 		}
 		//////Get spawn coordinates of animals///////////
 		for(int i = 0; i < 100; i++)
+		
+		
+		//
+		
+		
+		
+		
+		positions = new int[64][64];
+		for(int i = 0; i <=63; i ++) {
+			for(int k = 0; k <=63; k ++) {
+				positions[i][k] = 0;
+			}
+		}
+		
+		
+	
+		
 		
 		
 		frame.setContentPane(panel);
