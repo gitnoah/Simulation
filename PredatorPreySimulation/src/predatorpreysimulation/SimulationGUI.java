@@ -42,11 +42,13 @@ public class SimulationGUI {
 				c.gridx = k;
 				
 				panel.add(mainlabel[i][k], c);
+
 				mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 				mainlabel[i][k].setIcon(new ImageIcon("whitefish.jpg"));
 			}
-			
 		}
+		
+		
 		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
