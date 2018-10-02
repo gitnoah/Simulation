@@ -2,22 +2,30 @@ package predatorpreysimulation;
 
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.metal.MetalLookAndFeel;
-
-
+import javax.swing.plaf.synth.Region;
+import javax.swing.plaf.synth.SynthLookAndFeel;
+import javax.swing.plaf.synth.SynthStyle;
+import javax.swing.plaf.synth.SynthStyleFactory;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
@@ -26,17 +34,20 @@ import javax.swing.border.LineBorder;
 public class SimulationGUI {
 	JFrame frame;
 	JPanel panel;
+	JLabel animals;
 	JLabel[][] mainlabel;
-	
+	BufferedImage fishimg, eagleimg;
 	
 	public SimulationGUI() {
+		 LoadImage("/img/fish.jpg", "/img/eagle.jpg");
 		
-		
+		 /////////////////////////////Makes The Frame///////////////////////////////////
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(640, 640);
 		frame.setLocationRelativeTo(null);
 		
+		/////////////////////////////Creates The Grid///////////////////////////////////
 		GridBagConstraints c = new GridBagConstraints();
 		
 		panel = new JPanel(new GridBagLayout());
@@ -54,8 +65,24 @@ public class SimulationGUI {
 			}
 			
 		}
+		//////Get spawn coordinates of animals///////////
+		for(int i = 0; i < 100; i++)
+		
 		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	}
+	
+	public void LoadImage(String eag, String fis){
+		try{
+			fishimg = ImageIO.read(SimulationGUI.class.getResource(fis));
+			eagleimg = ImageIO.read(SimulationGUI.class.getResource(eag));
+			
+			
+		}catch (IOException e){
+			e.printStackTrace();
+		}
+	
+	}
+	
 }
