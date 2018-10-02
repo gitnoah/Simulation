@@ -20,6 +20,7 @@ public class SimulationGUI {
 	JFrame frame;
 	JPanel panel;
 	JLabel[][] mainlabel;
+	int[][] positions;
 	//
 	
 	public SimulationGUI() {
@@ -32,7 +33,10 @@ public class SimulationGUI {
 		
 		panel = new JPanel(new GridBagLayout());
 		
+		//creates grid
+		
 		mainlabel = new JLabel[64][64];
+		
 		for(int i = 0; i <=63; i ++) {
 			for(int k = 0; k <=63; k ++) {
 				mainlabel[i][k] = new JLabel();
@@ -42,11 +46,24 @@ public class SimulationGUI {
 				c.gridx = k;
 				
 				panel.add(mainlabel[i][k], c);
-
-				mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
-				mainlabel[i][k].setIcon(new ImageIcon("whitefish.jpg"));
+				
 			}
 		}
+		
+		//
+		
+		
+		
+		
+		positions = new int[64][64];
+		for(int i = 0; i <=63; i ++) {
+			for(int k = 0; k <=63; k ++) {
+				positions[i][k] = 0;
+			}
+		}
+		
+		
+	
 		
 		
 		
