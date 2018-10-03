@@ -61,7 +61,7 @@ public class SimulationGUI {
 		panel = new JPanel(new GridBagLayout());
 		
 		
-		//creates grid
+		//creates vgrid
 		
 		mainlabel = new JLabel[64][64];
 		
