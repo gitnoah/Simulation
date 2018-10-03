@@ -1,5 +1,8 @@
 package predatorpreysimulation;
 
+
+import java.util.Random;
+
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -19,11 +22,28 @@ import javax.swing.border.LineBorder;
 public class SimulationGUI {
 	JFrame frame;
 	JPanel panel;
+
+	JLabel animals;
 	JLabel[][] mainlabel;
+	
+
+
 	int[][] positions;
-	//
+
+	int[] fishx;
+	int[] fishy;
+	int[] eaglex;
+	int[] eagley;
+	int rannum;
+
 	
 	public SimulationGUI() {
+
+		
+		 
+		 
+		 /////////////////////////////Makes The Frame///////////////////////////////////
+
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(640, 640);
@@ -32,6 +52,7 @@ public class SimulationGUI {
 		GridBagConstraints c = new GridBagConstraints();
 		
 		panel = new JPanel(new GridBagLayout());
+		
 		
 		//creates grid
 		
@@ -49,16 +70,43 @@ public class SimulationGUI {
 				
 			}
 		}
+
+		/////////////////////////////Get spawn coordinates of animals//////////////////////////
+		Random r = new Random();
 		
-		//
+ 
+		/////////////fish coordinates
+		fishx = new int[100];
+		for(int i = 0; i < fishx.length; i++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			fishx[i] = rannum;
+		}
 		
+		fishy = new int[100];
+		for(int j = 0; j < fishy.length; j++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			fishy[j] = rannum;
+		}
 		
+		///////////////eagle coordinates
+		eaglex = new int[30];
+		for(int i = 0; i < eaglex.length; i++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			eaglex[i] = rannum;
+		}
 		
+		eagley = new int[30];
+		for(int j = 0; j< eagley.length; j++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			eaglex[j] = rannum;
+		}
+		
+		///////////////something///////////////////
 		
 		positions = new int[64][64];
 		for(int i = 0; i <=63; i ++) {
-			for(int k = 0; k <=63; k ++) {
-				positions[i][k] = 0;
+			for(int j = 0; j <=63; j ++) {
+				positions[i][j] = 0;
 			}
 		}
 		
