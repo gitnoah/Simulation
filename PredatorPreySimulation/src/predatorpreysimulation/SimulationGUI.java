@@ -162,10 +162,10 @@ public class SimulationGUI {
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
 		}
 		
-		int friends;
+		int friends=0;
 		
 		if(positions[i+1][k] == 1) {
-			
+			friends+=1;
 		}
 		
 	}
