@@ -75,6 +75,48 @@ public class SimulationGUI {
 	
 	public void Search1(int i, int k){
 		if(positions[i+1][k] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i-1][k] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i+1][k+1] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i+1][k-1] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i-1][k+1] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i-1][k-1] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i][k+1] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		if(positions[i][k-1] == 2) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+		}
+		
+		int friends;
+		
+		if(positions[i+1][k] == 1) {
 			
 		}
 		
