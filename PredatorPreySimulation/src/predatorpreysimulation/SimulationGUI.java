@@ -71,6 +71,8 @@ public class SimulationGUI {
 		frame.setVisible(true);
 	}
 	
+	
+	
 	public static void Search(){
 		
 	}
