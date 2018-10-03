@@ -125,7 +125,7 @@ public class SimulationGUI {
 	
 	
 	
-	public void Search1(int i, int k){
+	public void Searchfish(int i, int k){
 		if(positions[i+1][k] == 2) {
 			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
@@ -230,5 +230,71 @@ public class SimulationGUI {
 			}
 		}
 		
+	}
+	
+	public void Searchwolf(int i, int k) {
+int friends=0;
+		
+		if(positions[i+1][k] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i-1][k] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i][k+1] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i][k-1] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i+1][k+1] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i+1][k-1] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i-1][k+1] == 2) {
+			friends+=1;
+		}
+		
+		if(positions[i-1][k-1] == 2) {
+			friends+=1;
+		}
+		
+		//////
+		
+		if(friends < 2) {
+			if(positions[i+1][k] == 0) {
+				mainlabel[i+1][k].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i-1][k] == 0) {
+				mainlabel[i-1][k].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i-1][k].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i][k+1] == 0) {
+				mainlabel[i][k+1].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i][k+1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i][k-1] == 0) {
+				mainlabel[i][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i][k-1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i+1][k+1] == 0) {
+				mainlabel[i+1][k+1].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i+1][k+1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i+1][k-1] == 0) {
+				mainlabel[i+1][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i+1][k-1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i-1][k+1] == 0) {
+				mainlabel[i-1][k+1].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i-1][k+1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i-1][k-1] == 0) {
+				mainlabel[i-1][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
+				mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
+			}
+		}
 	}
 }
