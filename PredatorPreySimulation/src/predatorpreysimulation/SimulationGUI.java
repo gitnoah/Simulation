@@ -73,7 +73,10 @@ public class SimulationGUI {
 	
 	
 	
-	public static void Search(){
+	public void Search1(int i, int k){
+		if(positions[i+1][k] == 2) {
+			
+		}
 		
 	}
 }
