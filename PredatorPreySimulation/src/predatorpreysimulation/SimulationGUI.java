@@ -29,6 +29,7 @@ public class SimulationGUI {
 
 
 	int[][] positions;
+	int[][] fish;
 
 	int[] fishx;
 	int[] fishy;
@@ -88,6 +89,7 @@ public class SimulationGUI {
 			fishy[j] = rannum;
 		}
 		
+	
 		///////////////eagle coordinates
 		eaglex = new int[30];
 		for(int i = 0; i < eaglex.length; i++) {
@@ -96,10 +98,12 @@ public class SimulationGUI {
 		}
 		
 		eagley = new int[30];
-		for(int j = 0; j< eagley.length; j++) {
+		for(int j = 0; j < eagley.length; j++) {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
 			eaglex[j] = rannum;
 		}
+		
+		
 		
 		///////////////something///////////////////
 		
@@ -114,7 +118,7 @@ public class SimulationGUI {
 	
 		
 		
-		
+		////////////stays at bottom/////////
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	}
