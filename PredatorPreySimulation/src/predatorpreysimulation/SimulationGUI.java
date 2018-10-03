@@ -168,5 +168,63 @@ public class SimulationGUI {
 			friends+=1;
 		}
 		
+		if(positions[i-1][k] == 1) {
+			friends+=1;
+		}
+		
+		if(positions[i][k+1] == 1) {
+			friends+=1;
+		}
+		
+		if(positions[i][k-1] == 1) {
+			friends+=1;
+		}
+		
+		if(positions[i+1][k+1] == 1) {
+			friends+=1;
+		}
+		
+		if(positions[i+1][k-1] == 1) {
+			friends+=1;
+		}
+		
+		if(positions[i-1][k+1] == 1) {
+			friends+=1;
+		}
+		
+		if(positions[i-1][k-1] == 1) {
+			friends+=1;
+		}
+		
+		//////
+		
+		if(friends < 2) {
+			if(positions[i+1][k] == 0) {
+				mainlabel[i+1][k].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i-1][k] == 0) {
+				mainlabel[i-1][k].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i-1][k].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i][k+1] == 0) {
+				mainlabel[i][k+1].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i][k+1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i][k-1] == 0) {
+				mainlabel[i][k-1].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i][k-1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i+1][k+1] == 0) {
+				mainlabel[i+1][k+1].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i+1][k+1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i+1][k-1] == 0) {
+				mainlabel[i+1][k-1].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i+1][k-1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i-1][k+1] == 0) {
+				mainlabel[i-1][k+1].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i-1][k+1].setBorder(new LineBorder(Color.BLACK));
+			}else if(positions[i-1][k-1] == 0) {
+				mainlabel[i-1][k-1].setIcon(new ImageIcon("whitefish.jpg"));
+				mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
+			}
+		}
+		
 	}
 }
