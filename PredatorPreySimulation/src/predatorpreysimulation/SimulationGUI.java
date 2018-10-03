@@ -1,6 +1,6 @@
 package predatorpreysimulation;
 
-
+import java.util.Random;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -36,16 +36,19 @@ public class SimulationGUI {
 	JPanel panel;
 	JLabel animals;
 	JLabel[][] mainlabel;
-<<<<<<< HEAD
 	BufferedImage fishimg, eagleimg;
-=======
+
 	int[][] positions;
-	//
->>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
+	int[] fishx;
+	int[] fishy;
+	int[] eaaglex;
+	int[] eagley;
+	int rannum;
 	
 	public SimulationGUI() {
 		 LoadImage("/img/fish.jpg", "/img/eagle.jpg");
-		
+		 
+		 
 		 /////////////////////////////Makes The Frame///////////////////////////////////
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,19 +76,22 @@ public class SimulationGUI {
 				
 			}
 		}
-		//////Get spawn coordinates of animals///////////
-		for(int i = 0; i < 100; i++)
+		/////////////////////////////Get spawn coordinates of animals//////////////////////////
+		Random r = new Random();
 		
+		
+		fishx = new int[30];
+		for(int i = 0; i < fishx.length; i++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			fishx[i] = rannum;
+		}
 		
 		//
 		
-		
-		
-		
 		positions = new int[64][64];
 		for(int i = 0; i <=63; i ++) {
-			for(int k = 0; k <=63; k ++) {
-				positions[i][k] = 0;
+			for(int j = 0; j <=63; j ++) {
+				positions[i][j] = 0;
 			}
 		}
 		
