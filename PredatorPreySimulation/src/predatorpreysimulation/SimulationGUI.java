@@ -2,6 +2,8 @@ package predatorpreysimulation;
 
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -19,6 +21,7 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 
+
 public class SimulationGUI {
 	JFrame frame;
 	JPanel panel;
@@ -26,7 +29,7 @@ public class SimulationGUI {
 	JLabel animals;
 	JLabel[][] mainlabel;
 	
-
+	Timer timer;
 
 	int[][] positions;
 	int[][] fish;
@@ -39,10 +42,7 @@ public class SimulationGUI {
 
 	
 	public SimulationGUI() {
-
 		
-		 
-		 
 		 /////////////////////////////Makes The Frame///////////////////////////////////
 
 		frame = new JFrame("Simulation");
@@ -71,9 +71,6 @@ public class SimulationGUI {
 				
 			}
 		}
-
-		
-		
 		
 		
 		///////////////something///////////////////
@@ -158,6 +155,7 @@ public class SimulationGUI {
 			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
 		}
+		
 		
 		if(positions[i][k+1] == 2) {
 			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
