@@ -32,11 +32,9 @@ public class SimulationGUI {
 	JLabel animals;
 	JLabel[][] mainlabel;
 	
-<<<<<<< HEAD
+
 	Timer timer;
-=======
 	JButton button;
->>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 
 	int[][] positions;
 	int[][] fish;
