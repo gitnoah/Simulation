@@ -235,7 +235,7 @@ public class SimulationGUI {
 		
 	}
 	
-	public void Searchwolf(int i, int k) {
+	public void Searcheagle(int i, int k) {
 int friends=0;
 		
 		if(positions[i+1][k] == 2) {
