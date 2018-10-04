@@ -150,82 +150,90 @@ public class SimulationGUI {
 	
 	public void Searchfish(int i, int k){
 		if(positions[i+1][k] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i-1][k] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i+1][k+1] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i+1][k-1] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i-1][k+1] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i-1][k-1] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i][k+1] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		if(positions[i][k-1] == 2) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 2;
 		}
 		
 		int friends=0;
 		
-		if(positions[i+1][k] == 1) {
+		if(positions[i][k] == 1 && positions[i+1][k] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i-1][k] == 1) {
+		if(positions[i][k] == 1 && positions[i-1][k] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i][k+1] == 1) {
+		if(positions[i][k] == 1 && positions[i][k+1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i][k-1] == 1) {
+		if(positions[i][k] == 1 && positions[i][k-1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i+1][k+1] == 1) {
+		if(positions[i][k] == 1 && positions[i+1][k+1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i+1][k-1] == 1) {
+		if(positions[i][k] == 1 && positions[i+1][k-1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i-1][k+1] == 1) {
+		if(positions[i][k] == 1 && positions[i-1][k+1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i-1][k-1] == 1) {
+		if(positions[i][k] == 1 && positions[i-1][k-1] == 1) {
 			friends+=1;
 		}
 		
 		//////
 		
-		if(friends < 2) {
+		if(friends < 4  && friends > 0) {
 			if(positions[i+1][k] == 0) {
 				mainlabel[i+1][k].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
@@ -251,6 +259,10 @@ public class SimulationGUI {
 				mainlabel[i-1][k-1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
 			}
+		}else if(friends == 0) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 0;
 		}
 		
 	}
@@ -292,7 +304,13 @@ int friends=0;
 		
 		//////
 		
-		if(friends < 2) {
+		if(friends == 0) {
+			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+			positions[i][k] = 0;
+		}
+		
+		/*if(friends < 2) {
 			if(positions[i+1][k] == 0) {
 				mainlabel[i+1][k].setIcon(new ImageIcon("blackeagle.jpg"));
 				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
@@ -318,6 +336,8 @@ int friends=0;
 				mainlabel[i-1][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
 				mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
 			}
+			
 		}
+		*/
 	}
 }
