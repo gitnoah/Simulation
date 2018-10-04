@@ -24,12 +24,19 @@ import javax.swing.border.LineBorder;
 
 public class SimulationGUI {
 	JFrame frame;
+	JFrame frame2;
+	
 	JPanel panel;
-
+	JPanel panel2;
+	
 	JLabel animals;
 	JLabel[][] mainlabel;
 	
+<<<<<<< HEAD
 	Timer timer;
+=======
+	JButton button;
+>>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 
 	int[][] positions;
 	int[][] fish;
@@ -115,12 +122,29 @@ public class SimulationGUI {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
 			eaglex[j] = rannum; 
 		}
+		frame2 = new JFrame("Simulation");
+		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2.setSize(640, 640);
+		frame2.setLocationRelativeTo(null);
+		
+		GridBagConstraints c2 = new GridBagConstraints();
+		
+		panel2 = new JPanel(new GridBagLayout());
+		button = new JButton("press");
 		
 		
-		////////////stays at bottom/////////
-		frame.setContentPane(panel);      //
-		frame.setVisible(true);           //
-		////////////////////////////////////
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				frame2.dispose();
+				frame.setContentPane(panel);      
+				frame.setVisible(true);  
+			}
+			
+		});
+		
+		panel2.add(button);
+		frame2.setContentPane(panel2);
+		frame2.setVisible(true);
 	}
 	
 	
