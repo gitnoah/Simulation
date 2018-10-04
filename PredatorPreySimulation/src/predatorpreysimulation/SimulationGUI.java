@@ -72,36 +72,7 @@ public class SimulationGUI {
 			}
 		}
 
-		/////////////////////////////Get spawn coordinates of animals//////////////////////////
-		Random r = new Random();
 		
- 
-		/////////////fish coordinates
-		fishx = new int[100];
-		for(int i = 0; i < fishx.length; i++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
-			fishx[i] = rannum;
-		}
-		
-		fishy = new int[100];
-		for(int j = 0; j < fishy.length; j++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
-			fishy[j] = rannum;
-		}
-		
-	
-		///////////////eagle coordinates
-		eaglex = new int[30];
-		for(int i = 0; i < eaglex.length; i++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
-			eaglex[i] = rannum;
-		}
-		
-		eagley = new int[30];
-		for(int j = 0; j < eagley.length; j++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
-			eaglex[j] = rannum;
-		}
 		
 		
 		
@@ -109,18 +80,50 @@ public class SimulationGUI {
 		
 		positions = new int[64][64];
 		for(int i = 0; i <=63; i ++) {
-			for(int j = 0; j <=63; j ++) {
-				positions[i][j] = 0;
+			for(int k = 0; k <=63; k ++) {
+				positions[i][k] = 0;
 			}
 		}
 		
 		
-	
+		/////////////////////////////Get spawn coordinates of animals//////////////////////////
+		Random r = new Random();
+
+
+		/////////////fish coordinates
+		fishx = new int[100];
+		for(int i = 0; i < fishx.length; i++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			fishx[i] = rannum;
+		}
+
+		fishy = new int[100];
+		for(int j = 0; j < fishy.length; j++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			fishy[j] = rannum;
+		}
+
+		fish = new int[100][100];
+
+
+		///////////////eagle coordinates
+		eaglex = new int[30];
+		for(int i = 0; i < eaglex.length; i++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			eaglex[i] = rannum;
+		}
+
+		eagley = new int[30];
+		for(int j = 0; j < eagley.length; j++) {
+			rannum = r.nextInt(64 - 0 + 1) + 0;
+			eaglex[j] = rannum;
+		}
 		
 		
 		////////////stays at bottom/////////
-		frame.setContentPane(panel);
-		frame.setVisible(true);
+		frame.setContentPane(panel);      //
+		frame.setVisible(true);           //
+		////////////////////////////////////
 	}
 	
 	
