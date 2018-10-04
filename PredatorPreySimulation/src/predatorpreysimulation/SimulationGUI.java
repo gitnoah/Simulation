@@ -135,7 +135,7 @@ public class SimulationGUI {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				frame2.dispose();
-				frame.setContentPane(panel);      //
+				frame.setContentPane(panel);      
 				frame.setVisible(true);  
 			}
 			
