@@ -29,7 +29,6 @@ public class SimulationGUI {
 
 
 	int[][] positions;
-	int[][] fish;
 
 	int[] fishx;
 	int[] fishy;
@@ -72,58 +71,52 @@ public class SimulationGUI {
 			}
 		}
 
-		
-		
-		
-		
-		///////////////something///////////////////
-		
-		positions = new int[64][64];
-		for(int i = 0; i <=63; i ++) {
-			for(int k = 0; k <=63; k ++) {
-				positions[i][k] = 0;
-			}
-		}
-		
-		
 		/////////////////////////////Get spawn coordinates of animals//////////////////////////
 		Random r = new Random();
-
-
+		
+ 
 		/////////////fish coordinates
 		fishx = new int[100];
 		for(int i = 0; i < fishx.length; i++) {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
 			fishx[i] = rannum;
 		}
-
+		
 		fishy = new int[100];
 		for(int j = 0; j < fishy.length; j++) {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
 			fishy[j] = rannum;
 		}
-
-		fish = new int[100][100];
-
-
+		
 		///////////////eagle coordinates
 		eaglex = new int[30];
 		for(int i = 0; i < eaglex.length; i++) {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
 			eaglex[i] = rannum;
 		}
-
+		
 		eagley = new int[30];
-		for(int j = 0; j < eagley.length; j++) {
+		for(int j = 0; j< eagley.length; j++) {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
-			eaglex[j] = rannum; 
+			eaglex[j] = rannum;
+		}
+		
+		///////////////something///////////////////
+		
+		positions = new int[64][64];
+		for(int i = 0; i <=63; i ++) {
+			for(int j = 0; j <=63; j ++) {
+				positions[i][j] = 0;
+			}
 		}
 		
 		
-		////////////stays at bottom/////////
-		frame.setContentPane(panel);      //
-		frame.setVisible(true);           //
-		////////////////////////////////////
+	
+		
+		
+		
+		frame.setContentPane(panel);
+		frame.setVisible(true);
 	}
 	
 	
@@ -235,38 +228,38 @@ public class SimulationGUI {
 		
 	}
 	
-	public void Searcheagle(int i, int k) {
+	public void Searchwolf(int i, int k) {
 int friends=0;
 		
-		if(positions[i+1][k] == 2) {
+		if(positions[i+1][k] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i-1][k] == 2) {
+		if(positions[i-1][k] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i][k+1] == 2) {
+		if(positions[i][k+1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i][k-1] == 2) {
+		if(positions[i][k-1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i+1][k+1] == 2) {
+		if(positions[i+1][k+1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i+1][k-1] == 2) {
+		if(positions[i+1][k-1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i-1][k+1] == 2) {
+		if(positions[i-1][k+1] == 1) {
 			friends+=1;
 		}
 		
-		if(positions[i-1][k-1] == 2) {
+		if(positions[i-1][k-1] == 1) {
 			friends+=1;
 		}
 		
