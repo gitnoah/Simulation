@@ -116,7 +116,7 @@ public class SimulationGUI {
 		eagley = new int[30];
 		for(int j = 0; j < eagley.length; j++) {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
-			eaglex[j] = rannum;
+			eaglex[j] = rannum; 
 		}
 		
 		
