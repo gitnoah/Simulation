@@ -97,17 +97,26 @@ public class SimulationGUI {
 		/////////////fish coordinates
 		fishx = new int[100];
 		for(int i = 0; i < fishx.length; i++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
+			rannum = r.nextInt(63 - 0 + 1) + 0;
 			fishx[i] = rannum;
 		}
 
 		fishy = new int[100];
 		for(int j = 0; j < fishy.length; j++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
+			rannum = r.nextInt(63 - 0 + 1) + 0;
 			fishy[j] = rannum;
 		}
 
 		fish = new int[100][100];
+		
+		for(int j = 0; j < 100; j ++) {
+			int x, y;
+			x = fishx[j];
+			y = fishy[j];
+			mainlabel[x][y].setIcon(new ImageIcon("whitefish.jpg"));
+			mainlabel[x][y].setBorder(new LineBorder(Color.BLACK));
+			positions[x][y] = 1;
+		}
 
 
 		///////////////eagle coordinates
