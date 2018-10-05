@@ -95,13 +95,13 @@ public class SimulationGUI {
 
 
 		/////////////fish coordinates
-		fishx = new int[100];
+		fishx = new int[130];
 		for(int i = 0; i < fishx.length; i++) {
 			rannum = r.nextInt(63 - 0 + 1) + 0;
 			fishx[i] = rannum;
 		}
 
-		fishy = new int[100];
+		fishy = new int[130];
 		for(int j = 0; j < fishy.length; j++) {
 			rannum = r.nextInt(63 - 0 + 1) + 0;
 			fishy[j] = rannum;
@@ -109,7 +109,7 @@ public class SimulationGUI {
 
 		fish = new int[100][100];
 		
-		for(int j = 0; j < 100; j ++) {
+		for(int j = 0; j < 130; j ++) {
 			int x, y;
 			x = fishx[j];
 			y = fishy[j];
@@ -122,14 +122,23 @@ public class SimulationGUI {
 		///////////////eagle coordinates
 		eaglex = new int[30];
 		for(int i = 0; i < eaglex.length; i++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
+			rannum = r.nextInt(63 - 0 + 1) + 0;
 			eaglex[i] = rannum;
 		}
 
 		eagley = new int[30];
 		for(int j = 0; j < eagley.length; j++) {
-			rannum = r.nextInt(64 - 0 + 1) + 0;
+			rannum = r.nextInt(63 - 0 + 1) + 0;
 			eaglex[j] = rannum; 
+		}
+		
+		for(int j = 0; j < 30; j ++) {
+			int u, h;
+			u = fishx[j];
+			h = fishy[j];
+			mainlabel[u][h].setIcon(new ImageIcon("blackeagle.jpg"));
+			mainlabel[u][h].setBorder(new LineBorder(Color.BLACK));
+			positions[u][h] = 2;
 		}
 		
 		//////////
