@@ -54,7 +54,7 @@ public class SimulationGUI {
 
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(650, 650);
+		frame.setSize(800, 800);
 		frame.setLocationRelativeTo(null);
 		
 		GridBagConstraints c = new GridBagConstraints();
