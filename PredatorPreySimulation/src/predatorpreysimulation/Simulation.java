@@ -11,7 +11,7 @@ public class Simulation {
 
 	public static void main(String[] args) {
 		SimulationGUI test = new SimulationGUI();
-		Steptime turd = new Steptime();
+		//Steptime turd = new Steptime();
 
 	}
 

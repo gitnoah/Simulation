@@ -34,15 +34,9 @@ public class SimulationGUI {
 	
 
 	Timer timer;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 	JButton button;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 
 	int[][] positions;
 	int[][] fish;
