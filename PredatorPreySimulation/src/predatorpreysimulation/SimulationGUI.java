@@ -34,9 +34,15 @@ public class SimulationGUI {
 	
 
 	Timer timer;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 	JButton button;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 
 	int[][] positions;
 	int[][] fish;
@@ -54,7 +60,7 @@ public class SimulationGUI {
 
 		frame = new JFrame("Simulation");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(640, 640);
+		frame.setSize(650, 650);
 		frame.setLocationRelativeTo(null);
 		
 		GridBagConstraints c = new GridBagConstraints();
