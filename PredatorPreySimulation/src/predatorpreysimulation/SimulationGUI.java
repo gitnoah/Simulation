@@ -32,11 +32,11 @@ public class SimulationGUI {
 	JLabel animals;
 	JLabel[][] mainlabel;
 	
-<<<<<<< HEAD
+
 	Timer timer;
-=======
+
 	JButton button;
->>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
+
 
 	int[][] positions;
 	int[][] fish;
@@ -122,6 +122,8 @@ public class SimulationGUI {
 			rannum = r.nextInt(64 - 0 + 1) + 0;
 			eaglex[j] = rannum; 
 		}
+		
+		//////////
 		frame2 = new JFrame("Simulation");
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame2.setSize(640, 640);
