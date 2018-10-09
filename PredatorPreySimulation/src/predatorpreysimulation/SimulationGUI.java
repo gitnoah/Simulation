@@ -141,7 +141,7 @@ public class SimulationGUI {
 			positions[u][h] = 2;
 		}
 		
-		//////////
+		///////////
 		frame2 = new JFrame("Simulation");
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame2.setSize(640, 640);
