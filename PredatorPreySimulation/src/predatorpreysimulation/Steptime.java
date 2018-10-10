@@ -7,44 +7,15 @@ import java.util.Scanner;
 
 
 public class Steptime {
-	
-	static int interval;
-	static Timer timer;
+	static Thread thread = new Thread();
 	
 	
-	public Steptime() {
-	    
+	public Steptime() throws InterruptedException {
+	    for(int i = 1; i > 0; i++) {
+	    	thread.sleep(500);
+	    	System.out.println(i);
+	    }
 		
-		
-		Scanner input = new Scanner(System.in);
-		System.out.print("input seconds: ");
-		String secs = input.nextLine();
-		int delay = 500;
-	    int period = 500;
-	    timer = new Timer();
-		interval = Integer.parseInt(secs);
-		System.out.println(secs);
-		
-	    
-		
-		timer.scheduleAtFixedRate(new TimerTask() {
-
-			@Override
-			public void run() {
-				System.out.print(setInterval());
-			}
-			
-		}, delay, period);
-		
-		
-	}
-	
-	private static final int setInterval() {
-		if(interval == 1);
-			timer.cancel();
-			return --interval;
-
-
 	}
 		
 }
