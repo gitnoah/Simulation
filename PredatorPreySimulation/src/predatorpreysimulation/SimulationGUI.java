@@ -37,7 +37,14 @@ public class SimulationGUI {
 
 	JButton button;
 
-
+	JButton morefish;
+	JButton lessfish;
+	JButton moreeagles;
+	JButton lesseagles;
+	
+	int eagleamount = 30;
+	int fishamount = 130;
+	
 	int[][] positions;
 	int[][] fish;
 
@@ -75,11 +82,51 @@ public class SimulationGUI {
 				c.gridx = k;
 				
 				panel.add(mainlabel[i][k], c);
-				
+				 
 			}
 		}
+		frame2 = new JFrame("Simulation");
+		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2.setSize(640, 640);
+		frame2.setLocationRelativeTo(null);
 		
+		GridBagConstraints c2 = new GridBagConstraints();
 		
+		panel2 = new JPanel(new GridBagLayout());
+		button = new JButton("press");
+		
+		morefish = new JButton("Increase fish by 30");
+		lessfish = new JButton("Decrease fish by 30");
+		moreeagles = new JButton("Increase eagles by 10");
+		lesseagles = new JButton("Decrease eagles by 10");
+		
+		morefish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				fishamount += 30;  
+			}
+			
+		});
+		
+		lessfish.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				fishamount -= 30;
+			}
+			
+		});
+		
+		moreeagles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				eagleamount += 10;  
+			}
+			
+		});
+		
+		lesseagles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				eagleamount -= 10; 
+			}
+			
+		});
 		///////////////something///////////////////
 		
 		positions = new int[64][64];
@@ -95,13 +142,13 @@ public class SimulationGUI {
 
 
 		/////////////fish coordinates
-		fishx = new int[130];
+		fishx = new int[fishamount];
 		for(int i = 0; i < fishx.length; i++) {
 			rannum = r.nextInt(63 - 0 + 1) + 0;
 			fishx[i] = rannum;
 		}
 
-		fishy = new int[130];
+		fishy = new int[fishamount];
 		for(int j = 0; j < fishy.length; j++) {
 			rannum = r.nextInt(63 - 0 + 1) + 0;
 			fishy[j] = rannum;
@@ -109,7 +156,7 @@ public class SimulationGUI {
 
 		fish = new int[100][100];
 		
-		for(int j = 0; j < 130; j ++) {
+		for(int j = 0; j < fishamount; j ++) {
 			int x, y;
 			x = fishx[j];
 			y = fishy[j];
@@ -120,19 +167,19 @@ public class SimulationGUI {
 
 
 		///////////////eagle coordinates
-		eaglex = new int[30];
+		eaglex = new int[eagleamount];
 		for(int i = 0; i < eaglex.length; i++) {
 			rannum = r.nextInt(63 - 0 + 1) + 0;
 			eaglex[i] = rannum;
 		}
 
-		eagley = new int[30];
+		eagley = new int[eagleamount];
 		for(int j = 0; j < eagley.length; j++) {
 			rannum = r.nextInt(63 - 0 + 1) + 0;
 			eaglex[j] = rannum; 
 		}
 		
-		for(int j = 0; j < 30; j ++) {
+		for(int j = 0; j < eagleamount; j ++) {
 			int u, h;
 			u = fishx[j];
 			h = fishy[j];
@@ -142,15 +189,9 @@ public class SimulationGUI {
 		}
 		
 		///////////
-		frame2 = new JFrame("Simulation");
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame2.setSize(640, 640);
-		frame2.setLocationRelativeTo(null);
 		
-		GridBagConstraints c2 = new GridBagConstraints();
 		
-		panel2 = new JPanel(new GridBagLayout());
-		button = new JButton("press");
+		
 		
 		
 		button.addActionListener(new ActionListener() {
@@ -163,6 +204,10 @@ public class SimulationGUI {
 		});
 		
 		panel2.add(button);
+		panel2.add(morefish);
+		panel2.add(lessfish);
+		panel2.add(moreeagles);
+		panel2.add(lesseagles);
 		frame2.setContentPane(panel2);
 		frame2.setVisible(true);
 	}
