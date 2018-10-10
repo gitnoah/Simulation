@@ -82,7 +82,7 @@ public class SimulationGUI {
 				c.gridx = k;
 				
 				panel.add(mainlabel[i][k], c);
-				 
+				
 			}
 		}
 		frame2 = new JFrame("Simulation");
