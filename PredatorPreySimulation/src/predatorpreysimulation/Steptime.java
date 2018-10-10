@@ -34,7 +34,7 @@ public class Steptime {
 				System.out.print(setInterval());
 			}
 			
-		}, 10*delay, 10*period);
+		}, delay, period);
 		
 		
 	}
