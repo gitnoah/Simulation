@@ -9,7 +9,7 @@ package predatorpreysimulation;
 
 public class Simulation {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		SimulationGUI test = new SimulationGUI();
 		Steptime turd = new Steptime();
 
