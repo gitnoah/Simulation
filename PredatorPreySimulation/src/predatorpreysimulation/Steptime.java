@@ -34,7 +34,7 @@ public class Steptime {
 				System.out.print(setInterval());
 			}
 			
-		}, delay, period);
+		}, 10*delay, 10*period);
 		
 		
 	}
@@ -43,5 +43,8 @@ public class Steptime {
 		if(interval == 1);
 			timer.cancel();
 			return --interval;
+
+
 	}
+		
 }
