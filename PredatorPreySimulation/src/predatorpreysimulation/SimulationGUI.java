@@ -192,7 +192,7 @@ public class SimulationGUI {
 					positions[u][h] = 2;
 				}
 				
-				///////////
+				///////////initializes positions array/////////////////////
 
 				for(int i = 1; i <= 64; i ++) {
 					for(int k = 1; k <=64; k ++) {
@@ -204,6 +204,7 @@ public class SimulationGUI {
 					}
 				}
 				
+				//////////////////////////////////////////////////////////
 				
 				frame2.dispose();
 				frame.setContentPane(panel);      
@@ -222,7 +223,10 @@ public class SimulationGUI {
 		
 		
 	}
-	
+	/*
+	 * Method Searcheagle takes coordinates and searches all the postions around them to see if there are eagle or other fish.  If there are eagle it kills the fish and 
+	 * replaces it with an eagle.  If there are lease than 4 fish and more than 0 it spawns a new fish around the first one.
+	 */
 	
 	
 	public void Searchfish(int i, int k){
@@ -345,6 +349,9 @@ public class SimulationGUI {
 		
 	}
 	
+	/*
+	 * Method Searcheagle takes the coordinates of an eagle and looks to see if it has any friends around it.  If it does it lives.  IF not it dies.
+	 */
 	public void Searcheagle(int i, int k) {
 int friends=0;
 		
