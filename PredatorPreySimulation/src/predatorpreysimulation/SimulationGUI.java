@@ -127,91 +127,90 @@ public class SimulationGUI {
 			}
 			
 		});
-		///////////////something///////////////////
-		
-		positions = new int[66][66];
-		for(int i = 1; i <=64; i ++) {
-			for(int k = 1; k <=64; k ++) {
-				positions[i][k] = 0;
-			}
-		}
-		
-		
-		/////////////////////////////Get spawn coordinates of animals//////////////////////////
-		Random r = new Random();
-
-
-		/////////////fish coordinates
-		fishx = new int[fishamount];
-		for(int i = 0; i < fishx.length; i++) {
-			rannum = r.nextInt(64 - 1 + 1) + 1;
-			fishx[i] = rannum;
-		}
-
-		fishy = new int[fishamount];
-		for(int j = 0; j < fishy.length; j++) {
-			rannum = r.nextInt(64 - 1 + 1) + 1;
-			fishy[j] = rannum;
-		}
-
-		fish = new int[100][100];
-		
-		for(int j = 0; j < fishamount; j ++) {
-			int x, y;
-			x = fishx[j];
-			y = fishy[j];
-			mainlabel[x][y].setIcon(new ImageIcon("whitefish.jpg"));
-			mainlabel[x][y].setBorder(new LineBorder(Color.BLACK));
-			positions[x][y] = 1;
-		}
-
-
-		///////////////eagle coordinates
-		eaglex = new int[eagleamount];
-		for(int i = 0; i < eaglex.length; i++) {
-			rannum = r.nextInt(64 - 1 + 1) + 1;
-			eaglex[i] = rannum;
-		}
-
-		eagley = new int[eagleamount];
-		for(int j = 0; j < eagley.length; j++) {
-			rannum = r.nextInt(64 - 1 + 1) + 1;
-			eaglex[j] = rannum; 
-		}
-		
-		for(int j = 0; j < eagleamount; j ++) {
-			int u, h;
-			u = fishx[j];
-			h = fishy[j];
-			mainlabel[u][h].setIcon(new ImageIcon("blackeagle.jpg"));
-			mainlabel[u][h].setBorder(new LineBorder(Color.BLACK));
-			positions[u][h] = 2;
-		}
-		
-		///////////
-		
-		
-		
-		
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				
+	///////////////something///////////////////
+				
+				positions = new int[66][66];
+				for(int i = 1; i <=64; i ++) {
+					for(int k = 1; k <=64; k ++) {
+						positions[i][k] = 0;
+					}
+				}
+				
+				
+				/////////////////////////////Get spawn coordinates of animals//////////////////////////
+				Random r = new Random();
+
+
+				/////////////fish coordinates
+				fishx = new int[fishamount];
+				for(int i = 0; i < fishx.length; i++) {
+					rannum = r.nextInt(64 - 1 + 1) + 1;
+					fishx[i] = rannum;
+				}
+
+				fishy = new int[fishamount];
+				for(int j = 0; j < fishy.length; j++) {
+					rannum = r.nextInt(64 - 1 + 1) + 1;
+					fishy[j] = rannum;
+				}
+
+				fish = new int[100][100];
+				
+				for(int j = 0; j < fishamount; j ++) {
+					int x, y;
+					x = fishx[j];
+					y = fishy[j];
+					mainlabel[x][y].setIcon(new ImageIcon("whitefish.jpg"));
+					mainlabel[x][y].setBorder(new LineBorder(Color.BLACK));
+					positions[x][y] = 1;
+				}
+
+
+				///////////////eagle coordinates
+				eaglex = new int[eagleamount];
+				for(int i = 0; i < eaglex.length; i++) {
+					rannum = r.nextInt(64 - 1 + 1) + 1;
+					eaglex[i] = rannum;
+				}
+
+				eagley = new int[eagleamount];
+				for(int j = 0; j < eagley.length; j++) {
+					rannum = r.nextInt(64 - 1 + 1) + 1;
+					eaglex[j] = rannum; 
+				}
+				
+				for(int j = 0; j < eagleamount; j ++) {
+					int u, h;
+					u = fishx[j];
+					h = fishy[j];
+					mainlabel[u][h].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[u][h].setBorder(new LineBorder(Color.BLACK));
+					positions[u][h] = 2;
+				}
+				
+				///////////
+
+				for(int i = 1; i <= 64; i ++) {
+					for(int k = 1; k <=64; k ++) {
+						if(positions[i][k] == 1) {
+							Searchfish(i, k);
+						}else if(positions[i][k] == 2) {
+							Searcheagle(i, k);
+						}
+					}
+				}
+				
+				
 				frame2.dispose();
 				frame.setContentPane(panel);      
 				frame.setVisible(true);  
 			}
 			
 		});
-		
-		for(int i = 1; i <= 64; i ++) {
-			for(int k = 1; k <=64; k ++) {
-				if(positions[i][k] == 1) {
-					Searchfish(i, k);
-				}else if(positions[i][k] == 2) {
-					Searcheagle(i, k);
-				}
-			}
-		}
 		
 		panel2.add(button);
 		panel2.add(morefish);
