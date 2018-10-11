@@ -71,10 +71,10 @@ public class SimulationGUI {
 		
 		//creates grid
 		
-		mainlabel = new JLabel[64][64];
+		mainlabel = new JLabel[66][66];
 		
-		for(int i = 0; i <=63; i ++) {
-			for(int k = 0; k <=63; k ++) {
+		for(int i = 1; i <=64; i ++) {
+			for(int k = 1; k <=64; k ++) {
 				mainlabel[i][k] = new JLabel();
 				mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
 				mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
@@ -129,9 +129,9 @@ public class SimulationGUI {
 		});
 		///////////////something///////////////////
 		
-		positions = new int[64][64];
-		for(int i = 0; i <=63; i ++) {
-			for(int k = 0; k <=63; k ++) {
+		positions = new int[66][66];
+		for(int i = 1; i <=64; i ++) {
+			for(int k = 1; k <=64; k ++) {
 				positions[i][k] = 0;
 			}
 		}
@@ -144,13 +144,13 @@ public class SimulationGUI {
 		/////////////fish coordinates
 		fishx = new int[fishamount];
 		for(int i = 0; i < fishx.length; i++) {
-			rannum = r.nextInt(63 - 0 + 1) + 0;
+			rannum = r.nextInt(64 - 1 + 1) + 1;
 			fishx[i] = rannum;
 		}
 
 		fishy = new int[fishamount];
 		for(int j = 0; j < fishy.length; j++) {
-			rannum = r.nextInt(63 - 0 + 1) + 0;
+			rannum = r.nextInt(64 - 1 + 1) + 1;
 			fishy[j] = rannum;
 		}
 
@@ -169,13 +169,13 @@ public class SimulationGUI {
 		///////////////eagle coordinates
 		eaglex = new int[eagleamount];
 		for(int i = 0; i < eaglex.length; i++) {
-			rannum = r.nextInt(63 - 0 + 1) + 0;
+			rannum = r.nextInt(64 - 1 + 1) + 1;
 			eaglex[i] = rannum;
 		}
 
 		eagley = new int[eagleamount];
 		for(int j = 0; j < eagley.length; j++) {
-			rannum = r.nextInt(63 - 0 + 1) + 0;
+			rannum = r.nextInt(64 - 1 + 1) + 1;
 			eaglex[j] = rannum; 
 		}
 		
@@ -203,6 +203,17 @@ public class SimulationGUI {
 			
 		});
 		
+		for(int i = 1; i <= 64; i ++) {
+			for(int k = 1; k <=64; k ++) {
+				if(positions[i][k] == 1) {
+					Searchfish(i, k);
+					System.out.println("Hello");
+				}else if(positions[i][k] == 2) {
+					Searcheagle(i, k);
+				}
+			}
+		}
+		
 		panel2.add(button);
 		panel2.add(morefish);
 		panel2.add(lessfish);
@@ -210,6 +221,8 @@ public class SimulationGUI {
 		panel2.add(lesseagles);
 		frame2.setContentPane(panel2);
 		frame2.setVisible(true);
+		
+		
 	}
 	
 	
@@ -298,9 +311,10 @@ public class SimulationGUI {
 			friends+=1;
 		}
 		
-		//////
+		///////////
 		
 		if(friends < 4  && friends > 0) {
+			System.out.println(i);
 			if(positions[i+1][k] == 0) {
 				mainlabel[i+1][k].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
