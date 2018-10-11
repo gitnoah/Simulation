@@ -207,7 +207,6 @@ public class SimulationGUI {
 			for(int k = 1; k <=64; k ++) {
 				if(positions[i][k] == 1) {
 					Searchfish(i, k);
-					System.out.println("Hello");
 				}else if(positions[i][k] == 2) {
 					Searcheagle(i, k);
 				}
@@ -314,7 +313,6 @@ public class SimulationGUI {
 		///////////
 		
 		if(friends < 4  && friends > 0) {
-			System.out.println(i);
 			if(positions[i+1][k] == 0) {
 				mainlabel[i+1][k].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
