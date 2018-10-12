@@ -38,7 +38,7 @@ public class SimulationGUI {
 	JButton moreeagles;
 	JButton lesseagles;
 	
-	int eagleamount = 30;
+	int eagleamount = 50;
 	int fishamount = 130;
 	
 	int[][] positions;
