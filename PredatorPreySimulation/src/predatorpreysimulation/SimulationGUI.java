@@ -1,6 +1,5 @@
 package predatorpreysimulation;
 
-
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -20,8 +19,6 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-
-
 public class SimulationGUI {
 	JFrame frame;
 	JFrame frame2;
@@ -32,7 +29,6 @@ public class SimulationGUI {
 	JLabel animals;
 	JLabel[][] mainlabel;
 	
-
 	Timer timer;
 
 	JButton button;
@@ -54,7 +50,6 @@ public class SimulationGUI {
 	int[] eagley;
 	int rannum;
 
-	
 	public SimulationGUI() {
 		
 		 /////////////////////////////Makes The Frame///////////////////////////////////
@@ -157,8 +152,6 @@ public class SimulationGUI {
 				rannum = r.nextInt(64 - 1 + 1) + 1;
 				fishy[j] = rannum;
 			}
-
-		fish = new int[100][100];
 				
 		for(int j = 0; j < fishamount; j ++) {
 			int x, y;
@@ -171,33 +164,31 @@ public class SimulationGUI {
 
 
 		///////////////eagle coordinates
-		eaglex = new int[30];
+		eaglex = new int[eagleamount];
 		for(int i = 0; i < eagleamount; i++) {
 			rannum = r.nextInt(64 - 1 + 1) + 1;
 			eaglex[i] = rannum;
 		}
 
-		eagley = new int[30];
+		eagley = new int[eagleamount];
 		//
 		for(int j = 0; j < eagleamount; j++) {
 			rannum = r.nextInt(64 - 1 + 1) + 1;
 			eagley[j] = rannum; 
 		}
 				
-		for(int j = 0; j <= 29; j ++) {
+		for(int j = 0; j < eagleamount; j ++) {
 			int u, h;
 			u = eaglex[j];
 			h = eagley[j];
-			System.out.println("u: " + u);
-			System.out.println("h: " + h);
 			mainlabel[u][h].setIcon(new ImageIcon("blackeagle.jpg"));
 			mainlabel[u][h].setBorder(new LineBorder(Color.BLACK));
 			positions[u][h] = 2;
 		}
 				
-		///////////initializes positions array/////////////////////
+		///////////searches through positions array/////////////////////
 
-		/*for(int i = 1; i <= 64; i ++) {
+		for(int i = 1; i <= 64; i ++) {
 			for(int k = 1; k <=64; k ++) {
 				if(positions[i][k] == 1) {
 					Searchfish(i, k);
@@ -206,7 +197,7 @@ public class SimulationGUI {
 				}
 			}
 		}
-		*/		
+				
 		//////////////////////////////////////////////////////////
 				
 		frame2.dispose();
@@ -227,7 +218,7 @@ public class SimulationGUI {
 		
 }
 	/*
-	 * Method Searcheagle takes coordinates and searches all the postions around them to see if there are eagle or other fish.  If there are eagle it kills the fish and 
+	 * Method Searcheagle takes coordinates and searches all the positions around them to see if there are eagle or other fish.  If there are eagle it kills the fish and 
 	 * replaces it with an eagle.  If there are lease than 4 fish and more than 0 it spawns a new fish around the first one.
 	 */
 	
