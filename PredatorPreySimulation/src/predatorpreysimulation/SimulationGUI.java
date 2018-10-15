@@ -3,7 +3,9 @@ package predatorpreysimulation;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -50,7 +52,7 @@ public class SimulationGUI {
 	int[] eagley;
 	int rannum;
 
-	public SimulationGUI() {
+	public SimulationGUI() throws InterruptedException{
 		
 		 /////////////////////////////Makes The Frame///////////////////////////////////
 
@@ -191,15 +193,25 @@ public class SimulationGUI {
 		frame.setVisible(true);  
 		
 ///////////searches through positions array/////////////////////
+		int j = 0;	
+		while(j == 0) {
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			for(int i = 1; i <= 64; i ++) {
 				for(int k = 1; k <=64; k ++) {
 					if(positions[i][k] == 1) {
 						Searchfish(i, k);
 					}else if(positions[i][k] == 2) {
+						
 						Searcheagle(i, k);
 					}
 				}
 			}
+		}
 //////////////////////////////////////////////////////////
 			
 	}
@@ -346,47 +358,52 @@ public class SimulationGUI {
 	/*
 	 * Method Searcheagle takes the coordinates of an eagle and looks to see if it has any friends around it.  If it does it lives.  IF not it dies.
 	 */
-	public void Searcheagle(int i, int k) {
-int friends=0;
+	public void Searcheagle(int i, int k)  {
+		for(int j = 0; j < 100; j++) {
+			System.out.println(j);
+			
+			
+			int friends=0;
 		
-		if(positions[i+1][k] == 2) {
-			friends+=1;
-		}
+			if(positions[i+1][k] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i-1][k] == 2) {
-			friends+=1;
-		}
+			if(positions[i-1][k] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i][k+1] == 2) {
-			friends+=1;
-		}
+			if(positions[i][k+1] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i][k-1] == 2) {
-			friends+=1;
-		}
+			if(positions[i][k-1] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i+1][k+1] == 2) {
-			friends+=1;
-		}
+			if(positions[i+1][k+1] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i+1][k-1] == 2) {
-			friends+=1;
-		}
+			if(positions[i+1][k-1] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i-1][k+1] == 2) {
-			friends+=1;
-		}
+			if(positions[i-1][k+1] == 2) {
+				friends+=1;
+			}
 		
-		if(positions[i-1][k-1] == 2) {
-			friends+=1;
-		}
+			if(positions[i-1][k-1] == 2) {
+				friends+=1;
+			}
 		
-		//////
+			//////
 		
-		if(friends == 0) {
-			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
-			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
-			positions[i][k] = 0;
+			if(friends == 0) {
+				mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
+				mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
+				positions[i][k] = 0;
+			}
 		}
 		
 	}
