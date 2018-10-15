@@ -185,24 +185,23 @@ public class SimulationGUI {
 			mainlabel[u][h].setBorder(new LineBorder(Color.BLACK));
 			positions[u][h] = 2;
 		}
-				
-		///////////searches through positions array/////////////////////
-
-		for(int i = 1; i <= 64; i ++) {
-			for(int k = 1; k <=64; k ++) {
-				if(positions[i][k] == 1) {
-					Searchfish(i, k);
-				}else if(positions[i][k] == 2) {
-					Searcheagle(i, k);
-				}
-			}
-		}
-				
-		//////////////////////////////////////////////////////////
-				
+		 
 		frame2.dispose();
 		frame.setContentPane(panel);      
 		frame.setVisible(true);  
+		
+///////////searches through positions array/////////////////////
+			for(int i = 1; i <= 64; i ++) {
+				for(int k = 1; k <=64; k ++) {
+					if(positions[i][k] == 1) {
+						Searchfish(i, k);
+					}else if(positions[i][k] == 2) {
+						Searcheagle(i, k);
+					}
+				}
+			}
+//////////////////////////////////////////////////////////
+			
 	}
 			
 	});
@@ -215,6 +214,7 @@ public class SimulationGUI {
 		frame2.setContentPane(panel2);
 		frame2.setVisible(true);
 		
+
 		
 }
 	/*
