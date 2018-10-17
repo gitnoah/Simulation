@@ -192,11 +192,25 @@ public class SimulationGUI {
 		frame.setContentPane(panel);      
 		frame.setVisible(true);  
 		
+
+			
+	}
+			
+	});
+		
+		panel2.add(button);
+		panel2.add(morefish);
+		panel2.add(lessfish);
+		panel2.add(moreeagles);
+		panel2.add(lesseagles);
+		frame2.setContentPane(panel2);
+		frame2.setVisible(true);
+		
 ///////////searches through positions array/////////////////////
 		int j = 0;	
-		while(j == 0) {
+		while(j != 10) {
 			try {
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.SECONDS.sleep(2);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -211,22 +225,9 @@ public class SimulationGUI {
 					}
 				}
 			}
+			j+=1;
 		}
 //////////////////////////////////////////////////////////
-			
-	}
-			
-	});
-		
-		panel2.add(button);
-		panel2.add(morefish);
-		panel2.add(lessfish);
-		panel2.add(moreeagles);
-		panel2.add(lesseagles);
-		frame2.setContentPane(panel2);
-		frame2.setVisible(true);
-		
-
 		
 }
 	/*
