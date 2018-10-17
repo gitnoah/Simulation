@@ -12,7 +12,7 @@ public class Steptime {
 	
 	public Steptime() throws InterruptedException {
 	    for(int i = 1; i > 0; i++) {
-	    	thread.sleep(500);
+	    	thread.sleep(10000000);
 	    	System.out.println(i);
 	    }
 		

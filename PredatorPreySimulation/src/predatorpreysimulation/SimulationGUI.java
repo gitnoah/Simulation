@@ -192,9 +192,34 @@ public class SimulationGUI {
 		frame.setContentPane(panel);      
 		frame.setVisible(true);  
 		
+
+			
+	}
+			
+	});
+		
+		panel2.add(button);
+		panel2.add(morefish);
+		panel2.add(lessfish);
+		panel2.add(moreeagles);
+		panel2.add(lesseagles);
+		frame2.setContentPane(panel2);
+		frame2.setVisible(true);
+		
 ///////////searches through positions array/////////////////////
+<<<<<<< HEAD
 			
 		
+=======
+		int j = 0;	
+		while(j != 10) {
+			try {
+				TimeUnit.SECONDS.sleep(2);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+>>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 			for(int i = 1; i <= 64; i ++) {
 				for(int k = 1; k <=64; k ++) {
 					if(positions[i][k] == 1) {
@@ -211,22 +236,13 @@ public class SimulationGUI {
 					}
 				}
 			}
+<<<<<<< HEAD
 		
+=======
+			j+=1;
+		}
+>>>>>>> branch 'master' of https://github.com/gitnoah/Simulation.git
 //////////////////////////////////////////////////////////
-			
-	}
-			
-	});
-		
-		panel2.add(button);
-		panel2.add(morefish);
-		panel2.add(lessfish);
-		panel2.add(moreeagles);
-		panel2.add(lesseagles);
-		frame2.setContentPane(panel2);
-		frame2.setVisible(true);
-		
-
 		
 }
 	/*
