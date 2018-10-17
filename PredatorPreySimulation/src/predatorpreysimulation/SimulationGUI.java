@@ -193,25 +193,25 @@ public class SimulationGUI {
 		frame.setVisible(true);  
 		
 ///////////searches through positions array/////////////////////
-		int j = 0;	
-		while(j == 0) {
-			try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+		
 			for(int i = 1; i <= 64; i ++) {
 				for(int k = 1; k <=64; k ++) {
 					if(positions[i][k] == 1) {
 						Searchfish(i, k);
 					}else if(positions[i][k] == 2) {
-						
+						try {
+							TimeUnit.SECONDS.sleep(1);
+						} catch (InterruptedException e) {
+							
+							e.printStackTrace();
+						}
+					
 						Searcheagle(i, k);
 					}
 				}
 			}
-		}
+		
 //////////////////////////////////////////////////////////
 			
 	}
@@ -362,6 +362,12 @@ public class SimulationGUI {
 		for(int j = 0; j < 100; j++) {
 			System.out.println(j);
 			
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
 			
 			int friends=0;
 		
@@ -405,6 +411,7 @@ public class SimulationGUI {
 				positions[i][k] = 0;
 			}
 		}
+		
 		
 	}
 }
