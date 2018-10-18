@@ -3,6 +3,7 @@ package predatorpreysimulation;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -187,7 +188,28 @@ public class SimulationGUI {
 			mainlabel[u][h].setBorder(new LineBorder(Color.BLACK));
 			positions[u][h] = 2;
 		}
-		 
+///////////searches through positions array/////////////////////
+		
+		TimerTask repeat = new TimerTask() {
+			public void run() {
+				for(int i = 1; i <= 64; i ++) {
+					for(int k = 1; k <=64; k ++) {
+						if(positions[i][k] == 1) {
+							Searchfish(i, k);
+						}else if(positions[i][k] == 2) {
+							Searcheagle(i, k);
+						}
+					}
+				}
+			}
+		};
+		Timer timer = new Timer("timer");
+		
+		long delay = 5000L;
+		long period = 5000L;
+		timer.scheduleAtFixedRate(repeat, delay, period);
+		
+//////////////////////////////////////////////////////////
 		frame2.dispose();
 		frame.setContentPane(panel);      
 		frame.setVisible(true);  
@@ -206,28 +228,7 @@ public class SimulationGUI {
 		frame2.setContentPane(panel2);
 		frame2.setVisible(true);
 		
-///////////searches through positions array/////////////////////
-		int j = 0;	
-		while(j != 10) {
-			try {
-				TimeUnit.SECONDS.sleep(2);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			for(int i = 1; i <= 64; i ++) {
-				for(int k = 1; k <=64; k ++) {
-					if(positions[i][k] == 1) {
-						Searchfish(i, k);
-					}else if(positions[i][k] == 2) {
-						
-						Searcheagle(i, k);
-					}
-				}
-			}
-			j+=1;
-		}
-//////////////////////////////////////////////////////////
+
 		
 }
 	/*
@@ -325,7 +326,7 @@ public class SimulationGUI {
 		if(friends < 4  && friends > 0) {
 			if(positions[i+1][k] == 0) {
 				mainlabel[i+1][k].setIcon(new ImageIcon("whitefish.jpg"));
-				mainlabel[i=1][k].setBorder(new LineBorder(Color.BLACK));
+				mainlabel[i+1][k].setBorder(new LineBorder(Color.BLACK));
 			}else if(positions[i-1][k] == 0) {
 				mainlabel[i-1][k].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i-1][k].setBorder(new LineBorder(Color.BLACK));
@@ -360,9 +361,6 @@ public class SimulationGUI {
 	 * Method Searcheagle takes the coordinates of an eagle and looks to see if it has any friends around it.  If it does it lives.  IF not it dies.
 	 */
 	public void Searcheagle(int i, int k)  {
-		for(int j = 0; j < 100; j++) {
-			System.out.println(j);
-			
 			
 			int friends=0;
 		
@@ -405,7 +403,6 @@ public class SimulationGUI {
 				mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
 				positions[i][k] = 0;
 			}
-		}
 		
 	}
 }
