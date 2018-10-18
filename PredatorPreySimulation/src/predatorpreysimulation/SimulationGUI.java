@@ -404,5 +404,6 @@ public class SimulationGUI {
 				positions[i][k] = 0;
 			}
 		
+		
 	}
 }
