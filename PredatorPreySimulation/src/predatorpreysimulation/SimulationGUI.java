@@ -41,7 +41,7 @@ public class SimulationGUI {
 	JButton moreeagles;
 	JButton lesseagles;
 	
-	int eagleamount = 50;
+	int eagleamount = 100;
 	int fishamount = 130;
 	
 	int[][] positions;
@@ -137,7 +137,22 @@ public class SimulationGUI {
 					positions[i][k] = 0;
 				}
 			}
-				
+				int q = 0;
+				for(int k = 0; k <= 65; k ++) {
+					positions[q][k] = 3;
+				}
+				int e = 65;
+				for(int k = 0; k <= 65; k ++) {
+					positions[e][k] = 3;
+				}
+				int p = 0;
+				for(int k = 0; k <= 65; k ++) {
+					positions[k][p] = 3;
+				}
+				int l = 65;
+				for(int k = 0; k <= 65; k ++) {
+					positions[k][l] = 3;
+				}
 				
 		/////////////////////////////Get spawn coordinates of animals//////////////////////////
 		Random r = new Random();
@@ -206,7 +221,7 @@ public class SimulationGUI {
 		Timer timer = new Timer("timer");
 		
 		long delay = 2000L;
-		long period = 2000L;
+		long period = 1000L;
 		timer.scheduleAtFixedRate(repeat, delay, period);
 		
 //////////////////////////////////////////////////////////
@@ -357,7 +372,7 @@ public class SimulationGUI {
 				mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
 				positions[i-1][k-1] = 1;
 			}
-		}else if(friends == 0) {
+		}else if(friends == 0 || friends > 5) {
 			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
 			mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
 			positions[i][k] = 0;
@@ -403,10 +418,43 @@ public class SimulationGUI {
 			if(positions[i-1][k-1] == 2) {
 				friends+=1;
 			}
-		
-			//////
-		
-			if(friends == 0) {
+			
+			if(friends >= 1 && friends < 5) {
+				if(positions[i+1][k] == 0) {
+					mainlabel[i+1][k].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i+1][k].setBorder(new LineBorder(Color.BLACK));
+					positions[i+1][k] = 2;
+				}else if(positions[i][k+1] == 0) {
+					mainlabel[i][k+1].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i][k+1].setBorder(new LineBorder(Color.BLACK));
+					positions[i][k+1] = 2;
+				}else if(positions[i][k-1] == 0) {
+					mainlabel[i][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i][k-1].setBorder(new LineBorder(Color.BLACK));
+					positions[i][k-1] = 2;
+				}else if(positions[i-1][k] == 0) {
+					mainlabel[i-1][k].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i-1][k].setBorder(new LineBorder(Color.BLACK));
+					positions[i-1][k] = 2;
+				
+				}else if(positions[i+1][k+1] == 0) {
+					mainlabel[i+1][k+1].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i+1][k+1].setBorder(new LineBorder(Color.BLACK));
+					positions[i+1][k+1] = 2;
+				}else if(positions[i+1][k-1] == 0) {
+					mainlabel[i+1][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i+1][k-1].setBorder(new LineBorder(Color.BLACK));
+					positions[i+1][k-1] = 2;
+				}else if(positions[i-1][k+1] == 0) {
+					mainlabel[i-1][k+1].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i-1][k+1].setBorder(new LineBorder(Color.BLACK));
+					positions[i-1][k+1] = 2;
+				}else if(positions[i-1][k-1] == 0) {
+					mainlabel[i-1][k-1].setIcon(new ImageIcon("blackeagle.jpg"));
+					mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
+					positions[i-1][k-1] = 2;
+				}
+			}else if(friends == 0 || friends > 5) {
 				mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
 				mainlabel[i][k].setBorder(new LineBorder(Color.BLACK));
 				positions[i][k] = 0;
