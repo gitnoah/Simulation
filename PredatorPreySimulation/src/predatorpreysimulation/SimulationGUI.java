@@ -224,7 +224,7 @@ public class SimulationGUI {
 		long period = 1000L;
 		timer.scheduleAtFixedRate(repeat, delay, period);
 		
-//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 		frame2.dispose();
 		frame.setContentPane(panel);      
 		frame.setVisible(true);  
