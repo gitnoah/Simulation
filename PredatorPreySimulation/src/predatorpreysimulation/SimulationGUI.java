@@ -205,8 +205,8 @@ public class SimulationGUI {
 		};
 		Timer timer = new Timer("timer");
 		
-		long delay = 5000L;
-		long period = 5000L;
+		long delay = 2000L;
+		long period = 2000L;
 		timer.scheduleAtFixedRate(repeat, delay, period);
 		
 //////////////////////////////////////////////////////////
@@ -323,31 +323,39 @@ public class SimulationGUI {
 		
 		///////////
 		
-		if(friends < 4  && friends > 0) {
+		if(friends < 4  && friends > 1) {
 			if(positions[i+1][k] == 0) {
 				mainlabel[i+1][k].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i+1][k].setBorder(new LineBorder(Color.BLACK));
+				positions[i+1][k] = 1;
 			}else if(positions[i-1][k] == 0) {
 				mainlabel[i-1][k].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i-1][k].setBorder(new LineBorder(Color.BLACK));
+				positions[i-1][k] = 1;
 			}else if(positions[i][k+1] == 0) {
 				mainlabel[i][k+1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i][k+1].setBorder(new LineBorder(Color.BLACK));
+				positions[i][k+1] = 1;
 			}else if(positions[i][k-1] == 0) {
 				mainlabel[i][k-1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i][k-1].setBorder(new LineBorder(Color.BLACK));
+				positions[i][k-1] = 1;
 			}else if(positions[i+1][k+1] == 0) {
 				mainlabel[i+1][k+1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i+1][k+1].setBorder(new LineBorder(Color.BLACK));
+				positions[i+1][k+1] = 1;
 			}else if(positions[i+1][k-1] == 0) {
 				mainlabel[i+1][k-1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i+1][k-1].setBorder(new LineBorder(Color.BLACK));
+				positions[i+1][k-1] = 1;
 			}else if(positions[i-1][k+1] == 0) {
 				mainlabel[i-1][k+1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i-1][k+1].setBorder(new LineBorder(Color.BLACK));
+				positions[i-1][k+1] = 1;
 			}else if(positions[i-1][k-1] == 0) {
 				mainlabel[i-1][k-1].setIcon(new ImageIcon("whitefish.jpg"));
 				mainlabel[i-1][k-1].setBorder(new LineBorder(Color.BLACK));
+				positions[i-1][k-1] = 1;
 			}
 		}else if(friends == 0) {
 			mainlabel[i][k].setIcon(new ImageIcon("green.jpg"));
